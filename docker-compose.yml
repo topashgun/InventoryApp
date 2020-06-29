@@ -1,0 +1,14 @@
+version: "2"
+services:
+  app:
+    build: ./Application
+    ports:
+      - 8000:4000
+    depends_on:
+      - database
+    environment:
+      - DATABASE_HOST=database
+  database:
+    build: ./Database
+    ports:
+      - 3306:3306
